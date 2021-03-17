@@ -17,6 +17,13 @@ let closeModal = function () {
   overlay.classList.add('hidden');
 };
 
+let closeModalScapeKey = function (e, fn) {
+  if (e.key === 'Escape') {
+    if (!modal.classList.contains('hidden')) {
+      fn();
+    }
+  }
+};
 //Adding button functionality.
 
 btnShowModal.forEach(btn => {
@@ -26,3 +33,7 @@ btnShowModal.forEach(btn => {
 btnCloseModal.addEventListener('click', closeModal);
 
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', e => {
+  closeModalScapeKey(e, closeModal);
+});
