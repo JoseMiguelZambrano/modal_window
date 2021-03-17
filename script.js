@@ -18,10 +18,8 @@ let closeModal = function () {
 };
 
 let closeModalScapeKey = function (e, fn) {
-  if (e.key === 'Escape') {
-    if (!modal.classList.contains('hidden')) {
-      fn();
-    }
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    fn();
   }
 };
 //Adding button functionality.
